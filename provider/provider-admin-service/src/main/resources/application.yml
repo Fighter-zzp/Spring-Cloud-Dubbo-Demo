@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: admin-provider
+  main:
+    allow-bean-definition-overriding: true
+dubbo:
+  scan:
+    base-packages: com.zzp.spring.cloud.dubbo.provider.service.impl
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.247.145
+    port: 8848
+

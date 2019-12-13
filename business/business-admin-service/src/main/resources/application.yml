@@ -1,0 +1,32 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: business-admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.247.145:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8888
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://192.168.247.145:8848
+  scan:
+    base-packages: controller
+
+
+server:
+  port: 12000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
